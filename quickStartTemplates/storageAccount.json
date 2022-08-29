@@ -68,10 +68,26 @@
         "type": "bool",
         "defaultValue": false
       },
+      "synapseDedicatedSQLPoolName": {
+        "type": "string",
+        "defaultValue": "sqldp01"
+      },
+      "synapseSqlAdminPassword": {
+        "type": "string",
+        "defaultValue": "123xljsd1831"
+      },
+      "synapseSparkPoolName": {
+        "type": "string",
+        "defaultValue": "sparkp01"
+      },
+      "ctrlDeployPrivateDNSZones": {
+        "type": "bool",
+        "defaultValue": false
+      },
       "ctrlDeploySampleArtifacts": {
         "type": "bool",
         "defaultValue": false
-      }
+      }      
     },
     "resources": [
       {
