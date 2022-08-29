@@ -39,6 +39,38 @@
         "metadata": {
           "description": "The name of the Storage Account"
         }
+      },
+      "ctrlDeploySynapseSQLPool": {
+        "type": "bool",
+        "defaultValue": true
+      },
+      "ctrlDeploySynapseSparkPool": {
+        "type": "bool",
+        "defaultValue": true
+      },
+      "ctrlDeployPurview": {
+        "type": "bool",
+        "defaultValue": true
+      },
+      "ctrlDeployAI": {
+        "type": "bool",
+        "defaultValue": true
+      },
+      "ctrlDeployStreaming": {
+        "type": "bool",
+        "defaultValue": true
+      },
+      "ctrlDeployDataShare": {
+        "type": "bool",
+        "defaultValue": true
+      },      
+      "ctrlDeployCosmosDB": {
+        "type": "bool",
+        "defaultValue": false
+      },
+      "ctrlDeploySampleArtifacts": {
+        "type": "bool",
+        "defaultValue": false
       }
     },
     "resources": [
