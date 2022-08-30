@@ -2837,29 +2837,7 @@
                 "principalId": "[if(and(equals(parameters('ctrlDeployStreaming'), true()), equals(parameters('ctrlStreamingIngestionService'), 'iothub')), parameters('iotHubPrincipalID'), '')]",
                 "principalType": "ServicePrincipal"
               }
-            },
-            {
-              "type": "Microsoft.Authorization/roleAssignments",
-              "apiVersion": "2020-08-01-preview",
-              "scope": "[format('Microsoft.Storage/storageAccounts/{0}', parameters('rawDataLakeAccountName'))]",
-              "name": "[guid('a1fb98aa-4c53-4a4d-951f-3ac730a27a5b', subscription().subscriptionId, resourceGroup().id, deployment().name)]",
-              "properties": {
-                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('azureRBACStorageBlobDataContributorRoleID'))]",
-                "principalId": "[parameters('synapseWorkspaceIdentityPrincipalID')]",
-                "principalType": "ServicePrincipal"
-              }
-            },
-            {
-              "type": "Microsoft.Authorization/roleAssignments",
-              "apiVersion": "2020-08-01-preview",
-              "scope": "[format('Microsoft.Storage/storageAccounts/{0}', parameters('curatedDataLakeAccountName'))]",
-              "name": "[guid('4354d861-488d-4395-b018-2cc2baa9e491', subscription().subscriptionId, resourceGroup().id, deployment().name)]",
-              "properties": {
-                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('azureRBACStorageBlobDataContributorRoleID'))]",
-                "principalId": "[parameters('synapseWorkspaceIdentityPrincipalID')]",
-                "principalType": "ServicePrincipal"
-              }
-            },
+            },            
             {
               "condition": "[equals(parameters('ctrlDeployPurview'), true())]",
               "type": "Microsoft.Authorization/roleAssignments",
