@@ -2735,17 +2735,6 @@
           },
           "resources": [
             {
-              "type": "Microsoft.Authorization/roleAssignments",
-              "apiVersion": "2020-08-01-preview",
-              "scope": "[format('Microsoft.Synapse/workspaces/{0}', parameters('synapseWorkspaceName'))]",
-              "name": "[guid('cbe28037-09a6-4b35-a751-8dfd3f03f59d', subscription().subscriptionId, resourceGroup().id, deployment().name)]",
-              "properties": {
-                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('azureRBACOwnerRoleID'))]",
-                "principalId": "[parameters('UAMIPrincipalID')]",
-                "principalType": "ServicePrincipal"
-              }
-            },
-            {
               "condition": "[equals(parameters('ctrlDeployPurview'), true())]",
               "type": "Microsoft.Authorization/roleAssignments",
               "apiVersion": "2020-08-01-preview",
@@ -2753,16 +2742,6 @@
               "properties": {
                 "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('azureRBACStorageBlobDataReaderRoleID'))]",
                 "principalId": "[if(parameters('ctrlDeployPurview'), parameters('purviewIdentityPrincipalID'), '')]",
-                "principalType": "ServicePrincipal"
-              }
-            },
-            {
-              "type": "Microsoft.Authorization/roleAssignments",
-              "apiVersion": "2020-08-01-preview",
-              "name": "[guid('139d07dd-a26c-4b29-9619-8f70ea215795', subscription().subscriptionId, resourceGroup().id, deployment().name)]",
-              "properties": {
-                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('azureRBACOwnerRoleID'))]",
-                "principalId": "[parameters('UAMIPrincipalID')]",
                 "principalType": "ServicePrincipal"
               }
             },
